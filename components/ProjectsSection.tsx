@@ -1,4 +1,3 @@
-// components/ProjectsSection.tsx
 'use client'
 import { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
@@ -7,9 +6,34 @@ import { Button } from '@/components/ui/button'
 
 type ProjectFilter = 'all' | 'web' | 'mobile' | 'fullstack'
 
+interface Certificate {
+  name: string
+  organization: string
+  year: string
+  description: string
+  borderColor: string
+  credentialUrl?: string
+  skills: string[]
+  verified: boolean
+  certificateId?: string
+  program?: string
+  providerId?: string
+  activityId?: string
+  pdusContactHours?: number
+  completionDate?: string
+  pdfUrl?: string
+  likes?: number
+  downloads?: number
+  badge?: string
+  featured?: boolean
+}
+
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>('all')
   const [showAllProjects, setShowAllProjects] = useState(false)
+  const [certificateLikes, setCertificateLikes] = useState<Record<string, number>>({})
+  const [userLikes, setUserLikes] = useState<Set<string>>(new Set())
+  const [showCertificateDetails, setShowCertificateDetails] = useState<Record<string, boolean>>({})
 
   const projects = [
     {
@@ -31,16 +55,15 @@ export default function ProjectsSection() {
       imageUrl: "/project_image/enomy_finances.jpg",
       category: "fullstack" as const,
       status: "archived" as const
-      //featured: true
     },
     {
       title: "DOBU Martial Art Gym",
       description: "A responsive, single-page timetable for a martial arts gym. Features a dynamic schedule that allows users to filter classes by day of the week and type of martial art. Built with vanilla JavaScript for a fast and lightweight user experience.",
       technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-      liveUrl: "https://flow258.github.io/DOBU-Martail-Art-Gym/index.html", // Replace with your live deployment link
-      githubUrl: "https://github.com/Flow258/DOBU-Martail-Art-Gym", // Replace with your GitHub repo link
+      liveUrl: "https://flow258.github.io/DOBU-Martail-Art-Gym/index.html",
+      githubUrl: "https://github.com/Flow258/DOBU-Martail-Art-Gym",
       gradient: "from-red-500 to-orange-500",
-      imageUrl: "/project_image/dobu-gym.png", // Suggested image path
+      imageUrl: "/project_image/dobu-gym.png",
       category: "web" as const,
       status: "completed" as const
     },
@@ -55,18 +78,6 @@ export default function ProjectsSection() {
       category: "web" as const,
       status: "completed" as const
     },
-    /*
-    {
-      title: "Mobile Fitness Tracker",
-      description: "React Native fitness tracking app with workout logging, progress visualization, and social features. Clean UI with smooth animations and offline support.",
-      technologies: ["React Native", "Expo", "Firebase", "AsyncStorage"],
-      githubUrl: "https://github.com/Flow258/fitness-tracker",
-      gradient: "from-pink-400 to-purple-500",
-      imageUrl: "/projects/fitness.jpg",
-      category: "mobile" as const,
-      status: "in-progress" as const
-    },
-    */
     {
       title: "Portfolio Website",
       description: "Personal portfolio website showcasing projects and skills. Built with modern web technologies and optimized for performance and SEO.",
@@ -89,17 +100,27 @@ export default function ProjectsSection() {
     }
   ]
 
-  const certificates = [
+  const certificates: Certificate[] = [
     {
-      name: "AWS Certified Solutions Architect",
-      organization: "Amazon",
-      year: "2024",
-      description: "Comprehensive certification demonstrating expertise in designing distributed systems on AWS. Covers architectural best practices, security, and cost optimization.",
-      borderColor: "border-orange-500",
-      credentialUrl: "https://aws.amazon.com/verification",
-      skills: ["AWS", "Cloud Architecture", "Lambda", "S3", "EC2", "RDS"],
+      name: "Generative AI, Recruiting, and Talent Acquisition",
+      organization: "Project Management Institute (PMI)",
+      year: "2025",
+      description: "Course focused on leveraging Generative AI for recruiting and talent acquisition, emphasizing talent management and AI-driven business strategies.",
+      borderColor: "border-blue-500",
+      credentialUrl: "https://www.pmi.org/",
+      skills: ["Talent Management", "Artificial Intelligence for Business", "Generative AI for Recruiting"],
       verified: true,
-      certificateId: "AWS-SAA-C03-123456789"
+      certificateId: "d12c51f53abb998c697e349128de07cf6271c87b8f2393d12560aa082bbeb07f",
+      program: "PMI® Registered Education Provider",
+      providerId: "#4101",
+      activityId: "41014F2SHS",
+      pdusContactHours: 0.50,
+      completionDate: "Mar 04, 2025 at 07:50AM UTC",
+      pdfUrl: "/certificates/CertificateOfCompletion_Generative AI Recruiting and Talent Acquisition.pdf",
+      likes: 42,
+      downloads: 23,
+      //badge: "🏆",
+      //featured: true
     },
     {
       name: "Google Cloud Professional Developer",
@@ -110,7 +131,11 @@ export default function ProjectsSection() {
       credentialUrl: "https://cloud.google.com/certification",
       skills: ["GCP", "Kubernetes", "Cloud Functions", "App Engine"],
       verified: true,
-      certificateId: "GCP-PCD-987654321"
+      certificateId: "GCP-PCD-987654321",
+      pdfUrl: "/certificates/google-cloud-professional.pdf",
+      likes: 38,
+      downloads: 31,
+      badge: "☁️"
     },
     {
       name: "Meta Front-End Developer",
@@ -121,7 +146,11 @@ export default function ProjectsSection() {
       credentialUrl: "https://coursera.org/verify/professional-cert",
       skills: ["React", "JavaScript", "HTML/CSS", "UX/UI Design", "Testing"],
       verified: true,
-      certificateId: "META-FED-456789123"
+      certificateId: "META-FED-456789123",
+      pdfUrl: "/certificates/meta-frontend-developer.pdf",
+      likes: 56,
+      downloads: 47,
+      badge: "⚛️"
     },
     {
       name: "Full Stack Web Development",
@@ -130,14 +159,67 @@ export default function ProjectsSection() {
       description: "Intensive certification covering full-stack development with modern frameworks, databases, and deployment strategies.",
       borderColor: "border-green-500",
       skills: ["JavaScript", "Node.js", "React", "MongoDB", "Express"],
-      verified: true
+      verified: true,
+      pdfUrl: "/certificates/freecodecamp-fullstack.pdf",
+      likes: 29,
+      downloads: 18,
+      badge: "🔥"
     }
   ]
+
+  // Initialize likes from certificate data
+  useState(() => {
+    const initialLikes: Record<string, number> = {}
+    certificates.forEach(cert => {
+      if (cert.certificateId && cert.likes) {
+        initialLikes[cert.certificateId] = cert.likes
+      }
+    })
+    setCertificateLikes(initialLikes)
+  })
+
+  const handleLike = (certificateId: string) => {
+    if (!certificateId) return
+    
+    const isLiked = userLikes.has(certificateId)
+    const newUserLikes = new Set(userLikes)
+    
+    if (isLiked) {
+      newUserLikes.delete(certificateId)
+      setCertificateLikes(prev => ({
+        ...prev,
+        [certificateId]: (prev[certificateId] || 0) - 1
+      }))
+    } else {
+      newUserLikes.add(certificateId)
+      setCertificateLikes(prev => ({
+        ...prev,
+        [certificateId]: (prev[certificateId] || 0) + 1
+      }))
+    }
+    
+    setUserLikes(newUserLikes)
+  }
+
+  const handleDownload = (pdfUrl: string, certificateName: string) => {
+    // In a real app, you'd track downloads and potentially serve the PDF
+    const link = document.createElement('a')
+    link.href = pdfUrl
+    link.download = `${certificateName.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.pdf`
+    link.click()
+  }
+
+  const toggleCertificateDetails = (certificateId: string) => {
+    if (!certificateId) return
+    setShowCertificateDetails(prev => ({
+      ...prev,
+      [certificateId]: !prev[certificateId]
+    }))
+  }
 
   const filterCategories = [
     { id: 'all', label: 'All Projects', count: projects.length },
     { id: 'web', label: 'Web Apps', count: projects.filter(p => p.category === 'web').length },
-    //{ id: 'mobile', label: 'Mobile', count: projects.filter(p => p.category === 'mobile').length },
     { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.category === 'fullstack').length }
   ]
 
@@ -229,26 +311,201 @@ export default function ProjectsSection() {
           </div>
         )}
 
-        {/* Certificates Section */}
+        {/* Enhanced Certificates Section */}
         <div className="border-t pt-16 sm:pt-20 px-4 sm:px-0">
           <div className="text-center mb-8 sm:mb-12">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Certificates & Achievements</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+              Certificates & Achievements 
+              <span className="ml-2 text-yellow-500">🏆</span>
+            </h3>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
               Professional certifications and continuous learning achievements that validate my expertise 
               and commitment to staying current with industry standards.
             </p>
+            
+            {/* Certificate Stats */}
+            <div className="flex justify-center gap-6 mt-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span className="text-red-500">❤️</span>
+                <span>{Object.values(certificateLikes).reduce((sum, likes) => sum + likes, 0)} total likes</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-blue-500">📥</span>
+                <span>{certificates.reduce((sum, cert) => sum + (cert.downloads || 0), 0)} downloads</span>
+              </div>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {certificates.map((cert, index) => (
-              <div
-                key={index}
-                className="animate-fade-in-up w-full"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CertificateCard {...cert} />
-              </div>
-            ))}
+            {certificates.map((cert, index) => {
+              const certificateId = cert.certificateId || `cert-${index}`
+              const isLiked = userLikes.has(certificateId)
+              const currentLikes = certificateLikes[certificateId] || cert.likes || 0
+              const showDetails = showCertificateDetails[certificateId]
+
+              return (
+                <div
+                  key={certificateId}
+                  className="animate-fade-in-up w-full"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className={`relative group bg-background rounded-xl border-2 ${cert.borderColor} p-6 hover:shadow-lg transition-all duration-300 ${cert.featured ? 'ring-2 ring-yellow-400 ring-opacity-50' : ''}`}>
+                    
+                    {/* Featured Badge */}
+                    {cert.featured && (
+                      <div className="absolute -top-3 -right-3 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold">
+                        Featured ⭐
+                      </div>
+                    )}
+
+                    {/* Certificate Header */}
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          {cert.badge && <span className="text-2xl">{cert.badge}</span>}
+                          <h4 className="text-lg font-bold text-foreground">{cert.name}</h4>
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-1">{cert.organization}</p>
+                        <p className="text-xs text-muted-foreground">{cert.year}</p>
+                      </div>
+                      
+                      {cert.verified && (
+                        <div className="flex items-center text-green-500 text-xs">
+                          <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          Verified
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{cert.description}</p>
+
+                    {/* Skills */}
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {cert.skills.slice(0, 3).map((skill, idx) => (
+                        <span key={idx} className="px-2 py-1 bg-muted text-xs rounded-md text-muted-foreground">
+                          {skill}
+                        </span>
+                      ))}
+                      {cert.skills.length > 3 && (
+                        <span className="px-2 py-1 bg-muted text-xs rounded-md text-muted-foreground">
+                          +{cert.skills.length - 3} more
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Interaction Bar */}
+                    <div className="flex items-center justify-between pt-4 border-t">
+                      <div className="flex items-center gap-4">
+                        {/* Like Button */}
+                        <button
+                          onClick={() => handleLike(certificateId)}
+                          className={`flex items-center gap-1 text-sm transition-colors ${
+                            isLiked 
+                              ? 'text-red-500 hover:text-red-600' 
+                              : 'text-muted-foreground hover:text-red-500'
+                          }`}
+                        >
+                          <svg className="w-4 h-4" fill={isLiked ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                          </svg>
+                          <span>{currentLikes}</span>
+                        </button>
+
+                        {/* Download Count */}
+                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <span>{cert.downloads || 0}</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        {/* Details Toggle */}
+                        <button
+                          onClick={() => toggleCertificateDetails(certificateId)}
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          {showDetails ? 'Hide Details' : 'Show Details'}
+                        </button>
+
+                        {/* PDF Download */}
+                        {cert.pdfUrl && (
+                          <button
+                            onClick={() => handleDownload(cert.pdfUrl!, cert.name)}
+                            className="flex items-center gap-1 px-3 py-1 bg-primary text-primary-foreground text-xs rounded-md hover:bg-primary/90 transition-colors"
+                          >
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            PDF
+                          </button>
+                        )}
+
+                        {/* Credential Link */}
+                        {cert.credentialUrl && (
+                          <a
+                            href={cert.credentialUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 px-3 py-1 border text-xs rounded-md hover:bg-muted transition-colors"
+                          >
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            Verify
+                          </a>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Expandable Details */}
+                    {showDetails && (
+                      <div className="mt-4 pt-4 border-t text-xs text-muted-foreground space-y-2">
+                        {cert.certificateId && (
+                          <div>
+                            <strong>Certificate ID:</strong> {cert.certificateId}
+                          </div>
+                        )}
+                        {cert.program && (
+                          <div>
+                            <strong>Program:</strong> {cert.program}
+                          </div>
+                        )}
+                        {cert.providerId && (
+                          <div>
+                            <strong>Provider ID:</strong> {cert.providerId}
+                          </div>
+                        )}
+                        {cert.activityId && (
+                          <div>
+                            <strong>Activity ID:</strong> {cert.activityId}
+                          </div>
+                        )}
+                        {cert.pdusContactHours && (
+                          <div>
+                            <strong>PDUs/Contact Hours:</strong> {cert.pdusContactHours}
+                          </div>
+                        )}
+                        {cert.completionDate && (
+                          <div>
+                            <strong>Completion Date:</strong> {cert.completionDate}
+                          </div>
+                        )}
+                        {cert.skills.length > 3 && (
+                          <div>
+                            <strong>All Skills:</strong> {cert.skills.join(', ')}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
 
