@@ -3,6 +3,7 @@ import { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
 //import CertificateCard from '@/components/CertificateCard'
 import { Button } from '@/components/ui/button'
+import { image } from 'framer-motion/client'
 
 type ProjectFilter = 'all' | 'web' | 'mobile' | 'fullstack'
 
@@ -71,8 +72,9 @@ export default function ProjectsSection() {
       title: "Portfolio Website",
       description: "Personal portfolio website showcasing projects and skills. Built with modern web technologies and optimized for performance and SEO.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      liveUrl: "https://ashleydave.dev",
+      liveUrl: "https://portfolio-7fdc.vercel.app/",
       githubUrl: "https://github.com/Flow258/portfolio",
+      imageUrl: "/project_image/portfolio.png",
       gradient: "from-indigo-400 to-blue-500",
       category: "web" as const,
       status: "completed" as const
@@ -82,7 +84,7 @@ export default function ProjectsSection() {
       description: "An AI-powered voice-to-text assistant designed for a customer support environment that transcribes speech and provides real-time NLP analysis.",
       technologies: ["Python", "FastAPI", "WebSocket", "Whisper (OpenAI)", "Hugging Face Transformers", "PyAudio", "SpeechRecognition"],
       githubUrl: "https://github.com/Flow258/Voice-to-Text",
-      imageUrl: "/project_jump_ai.png",
+      imageUrl: "/project_image/project_jump_ai.png",
       gradient: "from-violet-400 to-purple-500",
       category: "fullstack" as const,
       status: "archived" as const
