@@ -40,6 +40,13 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
   
+  /* Custom Brand Colors */
+  --color-brand-darkest: var(--brand-darkest);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-medium: var(--brand-medium);
+  --color-brand-light: var(--brand-light);
+  --color-brand-lightest: var(--brand-lightest);
+  
   /* Sidebar Colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -62,62 +69,69 @@
 }
 
 /* ==========================================================================
-   ROOT VARIABLES - LIGHT THEME
+   ROOT VARIABLES - LIGHT THEME (Using Your Color Palette)
    ========================================================================== */
 :root {
   /* Base */
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #eef3f9;
+  --foreground: #001b2e;
+  
+  /* Your Brand Colors */
+  --brand-darkest: #001b2e;
+  --brand-dark: #1d3f58;
+  --brand-medium: #537692;
+  --brand-light: #b3cde4;
+  --brand-lightest: #eef3f9;
   
   /* Card */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: #001b2e;
   
   /* Popover */
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover: #ffffff;
+  --popover-foreground: #001b2e;
   
-  /* Primary */
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  /* Primary (using your darkest blue) */
+  --primary: #001b2e;
+  --primary-foreground: #eef3f9;
   
-  /* Secondary */
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  /* Secondary (using your medium blue) */
+  --secondary: #b3cde4;
+  --secondary-foreground: #001b2e;
   
-  /* Muted */
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  /* Muted (using your lightest blue) */
+  --muted: #eef3f9;
+  --muted-foreground: #1d3f58;
   
-  /* Accent */
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* Accent (using your dark blue) */
+  --accent: #1d3f58;
+  --accent-foreground: #eef3f9;
   
   /* States */
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: #dc2626;
   
-  /* Borders & Inputs */
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* Borders & Inputs (using your light blue) */
+  --border: #b3cde4;
+  --input: #b3cde4;
+  --ring: #537692;
   
-  /* Charts */
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Charts (using variations of your palette) */
+  --chart-1: #001b2e;
+  --chart-2: #1d3f58;
+  --chart-3: #537692;
+  --chart-4: #b3cde4;
+  --chart-5: #709bb8;
   
   /* Sidebar */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #001b2e;
+  --sidebar-primary: #001b2e;
+  --sidebar-primary-foreground: #eef3f9;
+  --sidebar-accent: #b3cde4;
+  --sidebar-accent-foreground: #001b2e;
+  --sidebar-border: #b3cde4;
+  --sidebar-ring: #537692;
 
   /* ==========================================================================
      CLEAN TYPOGRAPHY & SPACING ADDITIONS
@@ -149,61 +163,61 @@
 }
 
 /* ==========================================================================
-   DARK THEME
+   DARK THEME (Adjusted for Your Palette)
    ========================================================================== */
 .dark {
   /* Base */
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: #001b2e;
+  --foreground: #eef3f9;
   
   /* Card */
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
+  --card: #1d3f58;
+  --card-foreground: #eef3f9;
   
   /* Popover */
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  --popover: #1d3f58;
+  --popover-foreground: #eef3f9;
   
   /* Primary */
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: #b3cde4;
+  --primary-foreground: #001b2e;
   
   /* Secondary */
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  --secondary: #537692;
+  --secondary-foreground: #eef3f9;
   
   /* Muted */
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  --muted: #1d3f58;
+  --muted-foreground: #b3cde4;
   
   /* Accent */
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: #537692;
+  --accent-foreground: #eef3f9;
   
   /* States */
-  --destructive: oklch(0.704 0.191 22.216);
+  --destructive: #ef4444;
   
   /* Borders & Inputs */
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --border: #537692;
+  --input: #537692;
+  --ring: #b3cde4;
   
   /* Charts */
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --chart-1: #b3cde4;
+  --chart-2: #709bb8;
+  --chart-3: #537692;
+  --chart-4: #1d3f58;
+  --chart-5: #8ab4d3;
   
   /* Sidebar */
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar: #1d3f58;
+  --sidebar-foreground: #eef3f9;
+  --sidebar-primary: #b3cde4;
+  --sidebar-primary-foreground: #001b2e;
+  --sidebar-accent: #537692;
+  --sidebar-accent-foreground: #eef3f9;
+  --sidebar-border: #537692;
+  --sidebar-ring: #b3cde4;
 }
 
 /* ==========================================================================
@@ -228,9 +242,28 @@
 }
 
 /* ==========================================================================
-   CLEAN TYPOGRAPHY UTILITIES
+   BRAND COLOR UTILITIES
    ========================================================================== */
 @layer utilities {
+  /* Brand Color Classes */
+  .bg-brand-darkest { background-color: var(--brand-darkest); }
+  .bg-brand-dark { background-color: var(--brand-dark); }
+  .bg-brand-medium { background-color: var(--brand-medium); }
+  .bg-brand-light { background-color: var(--brand-light); }
+  .bg-brand-lightest { background-color: var(--brand-lightest); }
+  
+  .text-brand-darkest { color: var(--brand-darkest); }
+  .text-brand-dark { color: var(--brand-dark); }
+  .text-brand-medium { color: var(--brand-medium); }
+  .text-brand-light { color: var(--brand-light); }
+  .text-brand-lightest { color: var(--brand-lightest); }
+  
+  .border-brand-darkest { border-color: var(--brand-darkest); }
+  .border-brand-dark { border-color: var(--brand-dark); }
+  .border-brand-medium { border-color: var(--brand-medium); }
+  .border-brand-light { border-color: var(--brand-light); }
+  .border-brand-lightest { border-color: var(--brand-lightest); }
+
   /* Display Styles */
   .display-large {
     font-size: clamp(3rem, 8vw, 6rem);
@@ -402,10 +435,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.3));
+    filter: drop-shadow(0 0 5px rgba(27, 63, 88, 0.3));
   }
   50% {
-    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+    filter: drop-shadow(0 0 20px rgba(27, 63, 88, 0.6));
   }
 }
 
@@ -441,33 +474,6 @@
 }
 
 /* ==========================================================================
-   NAVIGATION STYLES
-   ========================================================================== 
-.menu-button:hover {
-  transform: scale(1.05);
-}
-
-.nav-indicator {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.nav-overlay {
-  z-index: 40;
-}
-
-.nav-menu {
-  z-index: 50;
-}
-*/
-/* ==========================================================================
    ANIMATION UTILITIES
    ========================================================================== */
 .animate-fade-in-up {
@@ -483,20 +489,42 @@
 }
 
 /* ==========================================================================
-   GRADIENT TEXT UTILITIES
+   GRADIENT TEXT UTILITIES (Updated with Your Colors)
    ========================================================================== */
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #001b2e 0%, #537692 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.gradient-text-white {
-  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c7d2fe 100%);
+.gradient-text-brand {
+  background: linear-gradient(135deg, #001b2e 0%, #1d3f58 25%, #537692 50%, #b3cde4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.gradient-text-light {
+  background: linear-gradient(135deg, #537692 0%, #b3cde4 50%, #eef3f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==========================================================================
+   BRAND GRADIENT BACKGROUNDS
+   ========================================================================== */
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #001b2e 0%, #1d3f58 25%, #537692 50%, #b3cde4 100%);
+}
+
+.bg-gradient-brand-dark {
+  background: linear-gradient(135deg, #001b2e 0%, #1d3f58 100%);
+}
+
+.bg-gradient-brand-light {
+  background: linear-gradient(135deg, #b3cde4 0%, #eef3f9 100%);
 }
 
 /* ==========================================================================
