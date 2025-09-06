@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { useState, useEffect, useRef } from 'react'
-import { Code, Palette, Users, Database, Globe, Smartphone } from 'lucide-react'
+import { Code, Palette, Users, Database, Globe, Smartphone, BrainCircuit } from 'lucide-react'
 
 interface Skill {
   name: string
@@ -187,27 +187,39 @@ export default function SkillsSection() {
       icon: Code,
       colorScheme: "from-purple-500 to-blue-500",
       skills: [
-        { name: "HTML5 & CSS3", level: 95, description: "Building semantic and responsive web layouts" },
-        { name: "Spring MVC", level: 80, description: "Java-based web application framework" },
-        { name: "Flask", level: 75, description: "Lightweight Python web framework" },
-        { name: "Reactjs/Next.js", level: 92, description: "Building modern web applications with React ecosystem" },
-        { name: "TypeScript", level: 88, description: "Type-safe JavaScript development" },
-        { name: "Tailwind CSS", level: 90, description: "Utility-first CSS framework" },
-        { name: "JavaScript ES6+", level: 95, description: "Modern JavaScript features and best practices" }
+        { name: "HTML5 & CSS3", level: 95, description: "Crafting semantic, responsive web layouts with modern standards" },
+        { name: "JavaScript ES6+", level: 95, description: "Building dynamic, interactive UIs with modern JavaScript" },
+        { name: "React.js/Next.js", level: 92, description: "Developing modern web apps with React and Next.js ecosystems" },
+        { name: "TypeScript", level: 90, description: "Enhancing JavaScript with type safety for scalable applications" },
+        { name: "Tailwind CSS", level: 90, description: "Designing with utility-first CSS for rapid, responsive UIs" },
+        { name: "Bootstrap", level: 85, description: "Creating responsive designs with Bootstrap framework" },
+        { name: "Framer Motion", level: 80, description: "Adding smooth animations to enhance user experience" }
       ]
     },
     {
-      title: "Backend Development", 
+      title: "Backend Development",
       icon: Database,
       colorScheme: "from-cyan-500 to-blue-500",
       skills: [
-        { name: "Node.js", level: 85, description: "Server-side JavaScript runtime" },
-        { name: "Python", level: 80, description: "Versatile programming language" },
-        { name: "MySQL", level: 82, description: "Advanced relational database" },
-        { name: "Java", level: 78, description: "Object-oriented programming and enterprise application development" },
-        { name: "PHP", level: 70, description: "Web development and server-side scripting" },
-        { name: "FastAPI", level: 75, description: "High-performance Python web framework" }
-        //{ name: "API Design", level: 88, description: "RESTful and GraphQL APIs" }
+        { name: "Python", level: 90, description: "Building robust backend systems with Python" },
+        { name: "FastAPI", level: 85, description: "Creating high-performance APIs with Python's FastAPI" },
+        { name: "Java", level: 80, description: "Developing enterprise-grade applications with Spring ecosystem" },
+        { name: "Spring MVC", level: 80, description: "Building scalable web applications with Spring MVC" },
+        { name: "Hibernate", level: 78, description: "Managing database interactions with ORM" },
+        { name: "MySQL", level: 85, description: "Designing and querying relational databases" },
+        { name: "WebSocket", level: 75, description: "Implementing real-time communication for applications" }
+      ]
+    },
+    {
+      title: "AI & Machine Learning",
+      icon: BrainCircuit,
+      colorScheme: "from-violet-500 to-purple-500",
+      skills: [
+        { name: "Generative AI", level: 80, description: "Leveraging AI for business and recruiting solutions" },
+        { name: "Hugging Face Transformers", level: 75, description: "Implementing NLP models for text analysis" },
+        { name: "Whisper (OpenAI)", level: 75, description: "Using OpenAI's Whisper for speech-to-text transcription" },
+        { name: "SpeechRecognition", level: 70, description: "Integrating speech recognition in applications" },
+        { name: "Ollama", level: 70, description: "Utilizing Ollama for local LLM deployments" }
       ]
     },
     {
@@ -215,10 +227,11 @@ export default function SkillsSection() {
       icon: Palette,
       colorScheme: "from-pink-500 to-rose-500",
       skills: [
-        { name: "Figma", level: 85, description: "Interface design and prototyping" },
-        { name: "User Research", level: 75, description: "Understanding user needs and behavior" },
-        { name: "Responsive Design", level: 92, description: "Mobile-first design approach" },
-        { name: "Design Systems", level: 80, description: "Consistent design patterns" }
+        { name: "User Experience Design", level: 85, description: "Designing user-centered interfaces and workflows" },
+        { name: "User Research", level: 80, description: "Conducting user research to inform design decisions" },
+        { name: "Prototyping", level: 80, description: "Creating interactive prototypes for usability testing" },
+        { name: "User Personas", level: 75, description: "Developing personas to guide UX strategies" },
+        { name: "Responsive Design", level: 90, description: "Ensuring seamless experiences across devices" }
       ]
     },
     {
@@ -226,34 +239,22 @@ export default function SkillsSection() {
       icon: Globe,
       colorScheme: "from-emerald-500 to-teal-500",
       skills: [
-        { name: "Git/GitHub", level: 90, description: "Version control and collaboration" },
-        { name: "Docker", level: 75, description: "Containerization and deployment" },
-        //{ name: "AWS", level: 70, description: "Cloud infrastructure and services" },
-        { name: "CI/CD", level: 78, description: "Automated testing and deployment" }
+        { name: "Git/GitHub", level: 90, description: "Managing version control and collaborative workflows" },
+        { name: "Docker", level: 75, description: "Containerizing applications for consistent deployment" },
+        { name: "CI/CD", level: 78, description: "Automating testing and deployment pipelines" },
+        { name: "Maven", level: 75, description: "Managing Java project builds and dependencies" },
+        { name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" }
       ]
     },
-/*
-    {
-      title: "Mobile Development",
-      icon: Smartphone,
-      colorScheme: "from-violet-500 to-purple-500",
-      skills: [
-        { name: "React Native", level: 82, description: "Cross-platform mobile apps" },
-        { name: "Flutter", level: 75, description: "Google's UI toolkit" },
-        { name: "iOS Development", level: 70, description: "Native iOS applications" },
-        { name: "Android Development", level: 72, description: "Native Android applications" }
-      ]
-    },
-*/
     {
       title: "Soft Skills",
       icon: Users,
       colorScheme: "from-amber-500 to-orange-500",
       skills: [
-        { name: "Team Leadership", level: 88, description: "Leading and mentoring development teams" },
-        { name: "Project Management", level: 85, description: "Agile and Scrum methodologies" },
-        { name: "Communication", level: 75, description: "Effective verbal and written communication with teams and stakeholders" },
-        { name: "Problem Solving", level: 90, description: "Analytical thinking and debugging" }
+        { name: "Project Management", level: 85, description: "Applying Agile and Scrum for project delivery" },
+        { name: "Problem Solving", level: 90, description: "Tackling complex challenges with analytical thinking" },
+        { name: "Communication", level: 80, description: "Collaborating effectively with teams and stakeholders" },
+        { name: "Team Leadership", level: 85, description: "Guiding teams to achieve project goals" }
       ]
     }
   ]
