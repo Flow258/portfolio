@@ -294,10 +294,7 @@ export default function EducationSection() {
         <div className={`text-center mb-20 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl mb-8 shadow-lg">
-            <GraduationCap className="w-10 h-10 text-white" />
-          </div>
-          
+
           <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             Learning 
             <span className="block bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
@@ -337,7 +334,7 @@ export default function EducationSection() {
         <div className={`mt-20 transition-all duration-1000 delay-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <Card className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 text-white border-0 shadow-2xl relative overflow-hidden">
+          <Card className="bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-medium text-white border-0 shadow-2xl relative overflow-hidden">
             {/* Animated background pattern */}
             <div className="absolute inset-0 opacity-10">
               {[...Array(6)].map((_, i) => (
@@ -398,38 +395,38 @@ export default function EducationSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-800 mb-8">What's Next?</h3>
+            <h3 className="text-2xl font-bold text-brand-darkest mb-8">What's Next?</h3>
             
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { 
                   title: "Advanced React Patterns", 
                   icon: Code, 
-                  color: "from-purple-500 to-blue-500",
+                  color: "from-brand-darkest to-brand-dark",
                   description: "Diving deeper into React optimization and architecture"
                 },
                 { 
                   title: "Cloud Architecture", 
                   icon: Target, 
-                  color: "from-cyan-500 to-teal-500",
+                  color: "from-brand-medium to-brand-light",
                   description: "Mastering AWS, Docker, and scalable deployments"
                 },
                 { 
                   title: "Mobile Development", 
                   icon: Palette, 
-                  color: "from-pink-500 to-rose-500",
+                  color: "from-brand-dark to-brand-medium",
                   description: "Expanding into React Native and Flutter"
                 }
               ].map((goal, index) => {
                 const GoalIcon = goal.icon
                 return (
-                  <Card key={index} className="bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <Card key={index} className="bg-card/90 backdrop-blur-sm border border-brand-light/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-6 text-center">
                       <div className={`w-12 h-12 bg-gradient-to-br ${goal.color} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md`}>
                         <GoalIcon className="w-6 h-6 text-white" />
                       </div>
-                      <h4 className="font-bold text-gray-800 mb-2">{goal.title}</h4>
-                      <p className="text-sm text-gray-600">{goal.description}</p>
+                      <h4 className="font-bold text-brand-darkest mb-2">{goal.title}</h4>
+                      <p className="text-sm text-brand-dark">{goal.description}</p>
                     </CardContent>
                   </Card>
                 )
