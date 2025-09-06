@@ -488,11 +488,11 @@ export default function ProjectsSection() {
             {/* Certificate Stats */}
             <div className="flex justify-center gap-6 mt-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <span className="text-red-500">❤️</span>
+                <span className="text-red-500"></span>
                 <span>{Object.values(certificateLikes).reduce((sum, likes) => sum + likes, 0)} total likes</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-blue-500">📥</span>
+                <span className="text-blue-500"></span>
                 <span>{certificates.reduce((sum, cert) => sum + (cert.downloads || 0), 0)} downloads</span>
               </div>
             </div>
