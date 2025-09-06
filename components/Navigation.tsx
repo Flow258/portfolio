@@ -68,7 +68,7 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-0.5 bg-transparent z-[100]">
         <div 
-          className="h-full bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transition-all duration-300 ease-out shadow-lg"
+          className="h-full bg-gradient-brand-dark transition-all duration-300 ease-out shadow-lg"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -76,7 +76,7 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
       {/* Main Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200/50' 
+          ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-brand-light/50' 
           : 'bg-white/90 backdrop-blur-md'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,12 +89,12 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
             >
               <div className="flex items-center space-x-3">
                 <div className="relative">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-cyan-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-lg">
-                    <span className="text-white text-lg font-bold">AD</span>
+                  <div className="w-10 h-10 bg-gradient-brand rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                    <span className="text-brand-lightest text-lg font-bold">AD</span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-cyan-600 rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity duration-300 -z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-brand rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity duration-300 -z-10"></div>
                 </div>
-                <span className="hidden sm:block text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
+                <span className="hidden sm:block text-xl font-bold text-brand-darkest group-hover:text-brand-medium transition-colors duration-300">
                   Ashley Dave
                 </span>
               </div>
@@ -102,7 +102,7 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center">
-              <div className="flex items-center space-x-1 bg-gray-100/80 backdrop-blur-sm rounded-full p-1 border border-gray-200/60">
+              <div className="flex items-center space-x-1 bg-brand-light/30 backdrop-blur-sm rounded-full p-1 border border-brand-light/60">
                 {navItems.map((item) => {
                   const IconComponent = item.icon
                   const isActive = activeSection === item.id
@@ -114,8 +114,8 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
                       onClick={() => handleNavClick(item.id)}
                       className={`relative flex items-center space-x-2 px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 group ${
                         isActive
-                          ? 'text-white bg-gradient-to-r from-purple-600 to-blue-600 shadow-md'
-                          : 'text-gray-600 hover:text-gray-900 hover:bg-white hover:shadow-sm'
+                          ? 'text-brand-lightest bg-brand-darkest shadow-md'
+                          : 'text-brand-medium hover:text-brand-darkest hover:bg-white hover:shadow-sm'
                       }`}
                     >
                       <IconComponent className="h-4 w-4" />
@@ -123,7 +123,7 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
                       
                       {/* Active indicator dot */}
                       {isActive && (
-                        <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
+                        <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-brand-lightest rounded-full animate-pulse"></div>
                       )}
                     </Button>
                   )
@@ -132,7 +132,7 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
             </div>
 
             {/* Tablet Navigation (icons only) */}
-            <div className="hidden md:flex lg:hidden items-center space-x-1 bg-gray-100/80 backdrop-blur-sm rounded-full p-1">
+            <div className="hidden md:flex lg:hidden items-center space-x-1 bg-brand-light/30 backdrop-blur-sm rounded-full p-1">
               {navItems.map((item) => {
                 const IconComponent = item.icon
                 const isActive = activeSection === item.id
@@ -145,14 +145,14 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
                     onClick={() => handleNavClick(item.id)}
                     className={`relative p-3 rounded-full transition-all duration-300 hover:scale-110 group ${
                       isActive
-                        ? 'text-white bg-gradient-to-r from-purple-600 to-blue-600 shadow-md'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-white'
+                        ? 'text-brand-lightest bg-brand-darkest shadow-md'
+                        : 'text-brand-medium hover:text-brand-darkest hover:bg-white'
                     }`}
                     title={item.label}
                   >
                     <IconComponent className="h-4 w-4" />
                     {isActive && (
-                      <div className="absolute -top-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full animate-pulse"></div>
+                      <div className="absolute -top-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-brand-lightest rounded-full animate-pulse"></div>
                     )}
                   </Button>
                 )
@@ -166,8 +166,8 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
                 size="sm"
                 className={`relative p-2.5 rounded-full transition-all duration-300 ${
                   isMenuOpen 
-                    ? 'text-white bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg' 
-                    : 'text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600'
+                    ? 'text-brand-lightest bg-brand-darkest shadow-lg' 
+                    : 'text-brand-dark hover:text-brand-lightest hover:bg-brand-darkest'
                 }`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
@@ -191,23 +191,23 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
       }`}>
         {/* Backdrop with blur */}
         <div 
-          className={`absolute inset-0 bg-gray-900/80 backdrop-blur-lg transition-all duration-400 ${
+          className={`absolute inset-0 bg-brand-darkest/80 backdrop-blur-lg transition-all duration-400 ${
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}
           onClick={() => setIsMenuOpen(false)}
         />
         
         {/* Mobile Menu Panel */}
-        <div className={`absolute top-20 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 transform transition-all duration-500 ${
+        <div className={`absolute top-20 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-brand-light/50 transform transition-all duration-500 ${
           isMenuOpen 
             ? 'translate-y-0 opacity-100 scale-100' 
             : '-translate-y-8 opacity-0 scale-95'
         }`}>
           
           {/* Menu Header */}
-          <div className="px-6 py-4 border-b border-gray-200/50">
-            <h3 className="text-lg font-semibold text-gray-800">Navigation</h3>
-            <p className="text-sm text-gray-500">Jump to any section</p>
+          <div className="px-6 py-4 border-b border-brand-light/50">
+            <h3 className="text-lg font-semibold text-brand-darkest">Navigation</h3>
+            <p className="text-sm text-brand-medium">Jump to any section</p>
           </div>
           
           {/* Menu Items */}
@@ -223,8 +223,8 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
                   onClick={() => handleNavClick(item.id)}
                   className={`w-full justify-start text-left px-4 py-4 text-base font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden ${
                     isActive
-                      ? 'text-white bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg'
-                      : 'text-gray-700 hover:text-purple-600 hover:bg-gray-100'
+                      ? 'text-brand-lightest bg-brand-darkest shadow-lg'
+                      : 'text-brand-dark hover:text-brand-darkest hover:bg-brand-light/30'
                   }`}
                   style={{ 
                     animationDelay: `${index * 50}ms`,
@@ -234,8 +234,8 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
                   <div className="flex items-center space-x-3 relative z-10">
                     <div className={`p-2 rounded-lg transition-all duration-300 ${
                       isActive 
-                        ? 'bg-white/20' 
-                        : 'bg-gray-200/80 group-hover:bg-purple-100'
+                        ? 'bg-brand-lightest/20' 
+                        : 'bg-brand-light group-hover:bg-brand-medium/30'
                     }`}>
                       <IconComponent className="h-4 w-4" />
                     </div>
@@ -243,16 +243,16 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
                   </div>
                   
                   {/* Hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 bg-brand-medium/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
                 </Button>
               )
             })}
           </div>
           
           {/* Menu Footer */}
-          <div className="px-6 py-4 border-t border-gray-200/50 bg-gray-50/50">
-            <p className="text-xs text-gray-500 text-center">
-              Press <kbd className="px-1.5 py-0.5 bg-gray-200 rounded text-xs">ESC</kbd> to close
+          <div className="px-6 py-4 border-t border-brand-light/50 bg-brand-lightest/50">
+            <p className="text-xs text-brand-medium text-center">
+              Press <kbd className="px-1.5 py-0.5 bg-brand-light rounded text-xs">ESC</kbd> to close
             </p>
           </div>
         </div>
@@ -271,11 +271,11 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
         }
         
         .logo-glow {
-          filter: drop-shadow(0 0 8px rgba(147, 51, 234, 0.3));
+          filter: drop-shadow(0 0 8px rgba(27, 63, 88, 0.3));
         }
         
         .logo-glow:hover {
-          filter: drop-shadow(0 0 12px rgba(147, 51, 234, 0.5));
+          filter: drop-shadow(0 0 12px rgba(27, 63, 88, 0.5));
         }
       `}</style>
     </>
