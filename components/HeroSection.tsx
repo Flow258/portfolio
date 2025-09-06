@@ -234,7 +234,6 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
             </Button>
           </div>
 
-
         {/* Additional brand accent - floating elements */}
         <div className="absolute top-1/4 left-0 w-20 h-20 bg-brand-medium/5 rounded-full blur-xl animate-float"></div>
         <div className="absolute bottom-1/4 right-0 w-32 h-32 bg-brand-light/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>

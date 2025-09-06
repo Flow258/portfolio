@@ -231,7 +231,7 @@ export default function SkillsSection() {
         { name: "User Research", level: 80, description: "Conducting user research to inform design decisions" },
         { name: "Prototyping", level: 80, description: "Creating interactive prototypes for usability testing" },
         { name: "User Personas", level: 75, description: "Developing personas to guide UX strategies" },
-        { name: "Responsive Design", level: 90, description: "Ensuring seamless experiences across devices" }
+        { name: "Responsive Design", level: 90, description: "Ensuring seamless experiences across devices" },
         { name: "Axure RP", level: 75, description: "Designing wireframes and prototypes with Axure RP" }
       ]
     },
