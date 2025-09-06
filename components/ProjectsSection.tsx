@@ -216,7 +216,7 @@ export default function ProjectsSection() {
       //"providerId": null,
       "pdusContactHours": 1.30,
       "completionDate": "Nov 27, 2024 at 04:48AM UTC",
-      "pdfUrl": "/certificates/CertificateOfCompletion_UX Foundations Prototyping.pdf",
+      "pdfUrl": "/certificates/CertificateOfCompletion_UX Foundations Prototyping 2017.pdf",
       "likes": 0,
       "downloads": 0
     },
@@ -252,7 +252,7 @@ export default function ProjectsSection() {
       //"providerId": null,
       "pdusContactHours": 0.33,
       "completionDate": "Nov 19, 2024 at 04:57AM UTC",
-      "pdfUrl": "/certificates/CertificateOfCompletion_UX Design 5 Scenarios Storyboards.pdf",
+      "pdfUrl": "/certificates/CertificateOfCompletion_UX Design 5 Creating Scenarios and Storyboards.pdf",
       "likes": 0,
       "downloads": 0
     },
