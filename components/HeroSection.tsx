@@ -188,7 +188,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
           Hi, I'm <br className="md:hidden" />
           <span className="relative inline-block">
             <span className="text-brand">
-              Ashley Dave N. Aqluzalas
+              Ashley Dave N. Alquizalas
             </span>
             {/* Animated underline with brand colors */}
             <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-brand-light transform scale-x-0 animate-scale-x opacity-80"></div>
