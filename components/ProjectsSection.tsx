@@ -38,6 +38,22 @@ export default function ProjectsSection() {
 
   const projects = [
     {
+      title: "Meals on Wheels Laravel Application",
+      description: "Built a charity meal delivery system with a 5-member team, featuring a CRUD dashboard, secure donations, meal planning, and location-based hot/cold meal delivery. Developed the donations dashboard system, designed and implemented the supporting database schema, and integrated Stripe as the secure payment gateway for seamless donation processing.",
+      technologies: [
+        "PHP",
+        "Laravel",
+        "React.js",
+        "Stripe API",
+        "MySQL"
+      ],
+      githubUrl: "https://github.com/Flow258/meals-on-wheels",
+      gradient: "from-orange-400 to-red-500",
+      imageUrl: "/project_image/meals-on-wheels.jpg",
+      category: "fullstack" as const,
+      status: "completed" as const
+    },
+    {
       title: "Enomy Finances",
       description: "A JSP-based financial management platform built with Spring MVC, Hibernate, and MySQL. Features include user authentication, transaction tracking, currency conversion, investment calculations, and role-based access control. Designed for reliability and scalability.",
       technologies: [
@@ -363,12 +379,8 @@ export default function ProjectsSection() {
     setUserLikes(newUserLikes)
   }
 
-  const handleDownload = (pdfUrl: string, certificateName: string) => {
-    // In a real app, you'd track downloads and potentially serve the PDF
-    const link = document.createElement('a')
-    link.href = pdfUrl
-    link.download = `${certificateName.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.pdf`
-    link.click()
+  const handleOpenPdf = (pdfUrl: string) => {
+    window.open(pdfUrl, '_blank')
   }
 
   const toggleCertificateDetails = (certificateId: string) => {
@@ -594,16 +606,17 @@ export default function ProjectsSection() {
                           {showDetails ? 'Hide Details' : 'Show Details'}
                         </button>
 
-                        {/* PDF Download */}
+                        {/* PDF View */}
                         {cert.pdfUrl && (
                           <button
-                            onClick={() => handleDownload(cert.pdfUrl!, cert.name)}
+                            onClick={() => handleOpenPdf(cert.pdfUrl!)}
                             className="flex items-center gap-1 px-3 py-1 bg-primary text-primary-foreground text-xs rounded-md hover:bg-primary/90 transition-colors"
                           >
                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
-                            PDF
+                            View PDF
                           </button>
                         )}
 
