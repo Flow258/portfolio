@@ -132,6 +132,11 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
     }
   }, [])
 
+  // Handle resume opening in new tab
+  const handleResumeView = () => {
+    window.open('/files/FINAL_DRAFT.pdf', '_blank')
+  }
+
   return (
     <section 
       id="home" 
@@ -203,36 +208,57 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
           </span>
         </p>
                 
-          {/* CTA Button - Solid background, no gradient */}
-          <div
-            className={`transition-all duration-1000 delay-700 ${
-              isVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
-            }`}
+        {/* Buttons Container */}
+        <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
+          {/* Main CTA Button */}
+          <Button
+            onClick={() => scrollToSection("about")}
+            size="lg"
+            className="relative group bg-brand-dark text-white px-10 py-5 text-xl font-semibold hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-brand-lightest/30 backdrop-blur-sm hover:border-brand-lightest/50 rounded-full overflow-hidden"
           >
-            <Button
-              onClick={() => scrollToSection("about")}
-              size="lg"
-              className="relative group bg-brand-dark text-white px-10 py-5 text-xl font-semibold hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-brand-lightest/30 backdrop-blur-sm hover:border-brand-lightest/50 rounded-full overflow-hidden"
-            >
-              {/* Button content */}
-              <span className="relative z-10 flex items-center">
-                Discover My Journey
-                <svg
-                  className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                  />
-                </svg>
-              </span>
-            </Button>
-          </div>
+            <span className="relative z-10 flex items-center">
+              Discover My Journey
+              <svg
+                className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </span>
+          </Button>
+
+          {/* Resume View Button */}
+          <Button
+            onClick={handleResumeView}
+            variant="outline"
+            size="lg"
+            className="relative group bg-transparent text-brand-lightest px-8 py-5 text-lg font-semibold border-2 border-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 rounded-full backdrop-blur-sm"
+          >
+            <span className="relative z-10 flex items-center">
+              <svg
+                className="mr-3 w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              View Resume
+            </span>
+          </Button>
+        </div>
 
         {/* Additional brand accent - floating elements */}
         <div className="absolute top-1/4 left-0 w-20 h-20 bg-brand-medium/5 rounded-full blur-xl animate-float"></div>
