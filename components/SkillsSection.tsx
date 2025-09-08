@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { useState, useEffect, useRef } from 'react'
-import { Code, Palette, Users, Database, Globe, Smartphone, BrainCircuit } from 'lucide-react'
+import { Code, Palette, Users, Database, Globe, Smartphone, BrainCircuit, Briefcase, CreditCard } from 'lucide-react'
 
 interface Skill {
   name: string
@@ -193,7 +193,9 @@ export default function SkillsSection() {
         { name: "TypeScript", level: 90, description: "Enhancing JavaScript with type safety for scalable applications" },
         { name: "Tailwind CSS", level: 90, description: "Designing with utility-first CSS for rapid, responsive UIs" },
         { name: "Bootstrap", level: 85, description: "Creating responsive designs with Bootstrap framework" },
-        { name: "Framer Motion", level: 80, description: "Adding smooth animations to enhance user experience" }
+        { name: "Framer Motion", level: 80, description: "Adding smooth animations to enhance user experience" },
+        { name: "JSP", level: 75, description: "Building dynamic web pages with JavaServer Pages" },
+        { name: "JSTL", level: 70, description: "Using JSP Standard Tag Library for web development" }
       ]
     },
     {
@@ -201,13 +203,19 @@ export default function SkillsSection() {
       icon: Database,
       colorScheme: "from-cyan-500 to-blue-500",
       skills: [
-        { name: "Python", level: 90, description: "Building robust backend systems with Python" },
+        { name: "Python", level: 86, description: "Building robust backend systems with Python" },
         { name: "FastAPI", level: 85, description: "Creating high-performance APIs with Python's FastAPI" },
         { name: "Java", level: 80, description: "Developing enterprise-grade applications with Spring ecosystem" },
         { name: "Spring MVC", level: 80, description: "Building scalable web applications with Spring MVC" },
-        { name: "Hibernate", level: 78, description: "Managing database interactions with ORM" },
+        { name: "Spring Security", level: 75, description: "Implementing authentication and authorization" },
+        { name: "Spring Data JPA", level: 75, description: "Simplifying data access with Spring Data JPA" },
+        //{ name: "Hibernate", level: 78, description: "Managing database interactions with ORM" },
+        { name: "PHP", level: 76, description: "Server-side scripting for web applications" },
+        { name: "Laravel", level: 82, description: "Building elegant web applications with Laravel framework" },
         { name: "MySQL", level: 85, description: "Designing and querying relational databases" },
-        { name: "WebSocket", level: 75, description: "Implementing real-time communication for applications" }
+        //{ name: "WebSocket", level: 75, description: "Implementing real-time communication for applications" },
+        { name: "Maven", level: 75, description: "Managing Java project builds and dependencies" },
+        { name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" }
       ]
     },
     {
@@ -219,9 +227,22 @@ export default function SkillsSection() {
         { name: "Hugging Face Transformers", level: 75, description: "Implementing NLP models for text analysis" },
         { name: "Whisper (OpenAI)", level: 75, description: "Using OpenAI's Whisper for speech-to-text transcription" },
         { name: "SpeechRecognition", level: 70, description: "Integrating speech recognition in applications" },
+        { name: "PyAudio", level: 68, description: "Audio processing and recording with Python" },
         { name: "Ollama", level: 70, description: "Utilizing Ollama for local LLM deployments" }
       ]
     },
+    /*
+    {
+      title: "Payment & API Integration",
+      icon: CreditCard, // You may need to import this icon
+      colorScheme: "from-green-500 to-emerald-500",
+      skills: [
+        { name: "Stripe API", level: 80, description: "Integrating secure payment processing with Stripe" },
+        { name: "REST API Development", level: 85, description: "Building and consuming RESTful web services" },
+        { name: "API Integration", level: 82, description: "Connecting applications with third-party services" }
+      ]
+    },
+    */
     {
       title: "UI/UX Design",
       icon: Palette,
@@ -232,7 +253,8 @@ export default function SkillsSection() {
         { name: "Prototyping", level: 80, description: "Creating interactive prototypes for usability testing" },
         { name: "User Personas", level: 75, description: "Developing personas to guide UX strategies" },
         { name: "Responsive Design", level: 90, description: "Ensuring seamless experiences across devices" },
-        { name: "Axure RP", level: 75, description: "Designing wireframes and prototypes with Axure RP" }
+        { name: "Axure RP", level: 75, description: "Designing wireframes and prototypes with Axure RP" },
+        { name: "Usability Testing", level: 78, description: "Conducting tests to validate design decisions" }
       ]
     },
     {
@@ -242,24 +264,39 @@ export default function SkillsSection() {
       skills: [
         { name: "Git/GitHub", level: 90, description: "Managing version control and collaborative workflows" },
         { name: "Docker", level: 75, description: "Containerizing applications for consistent deployment" },
-        { name: "CI/CD", level: 78, description: "Automating testing and deployment pipelines" },
+        //{ name: "CI/CD", level: 78, description: "Automating testing and deployment pipelines" },
         { name: "Maven", level: 75, description: "Managing Java project builds and dependencies" },
-        { name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" }
+        { name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" },
+        { name: "Vercel", level: 75, description: "Deploying and hosting modern web applications" }
       ]
     },
+    /*
+    {
+      title: "Business & Management",
+      icon: Briefcase, // You may need to import this icon
+      colorScheme: "from-indigo-500 to-purple-500",
+      skills: [
+        { name: "Business Analysis", level: 73, description: "Analyzing business requirements and processes" },
+        { name: "Talent Management", level: 75, description: "AI-driven talent acquisition and management strategies" },
+        { name: "Project Management", level: 76, description: "Applying Agile and Scrum for project delivery" },
+        { name: "AI for Business Strategy", level: 78, description: "Leveraging AI for business transformation" }
+      ]
+    },
+    */
     {
       title: "Soft Skills",
       icon: Users,
       colorScheme: "from-amber-500 to-orange-500",
       skills: [
-        { name: "Project Management", level: 85, description: "Applying Agile and Scrum for project delivery" },
-        { name: "Problem Solving", level: 90, description: "Tackling complex challenges with analytical thinking" },
+        { name: "Problem Solving", level: 81, description: "Tackling complex challenges with analytical thinking" },
+        //{ name: "Team Leadership", level: 76, description: "Guiding teams to achieve project goals" },
+        { name: "Adaptability", level: 88, description: "Thriving in dynamic, fast-paced environments" },
         { name: "Communication", level: 73, description: "Collaborating effectively with teams and stakeholders" },
-        { name: "Team Leadership", level: 85, description: "Guiding teams to achieve project goals" }
-        { name: "Adaptability", level: 88, description: "Thriving in dynamic, fast-paced environments" }
+        //{ name: "Analytical Thinking", level: 88, description: "Breaking down complex problems systematically" },
+        { name: "Cross-functional Collaboration", level: 82, description: "Working effectively across different teams and disciplines" }
       ]
     }
-  ]
+  ];
 
   return (
     <section 
