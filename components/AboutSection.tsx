@@ -291,7 +291,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Call to action */}
+        {/* Call to action 
         <div className={`mt-16 text-center transition-all duration-1000 delay-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
@@ -312,6 +312,7 @@ export default function AboutSection() {
             </CardContent>
           </Card>
         </div>
+        */}
       </div>
 
       <style jsx>{`
