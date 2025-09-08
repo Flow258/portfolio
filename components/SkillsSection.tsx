@@ -254,8 +254,9 @@ export default function SkillsSection() {
       skills: [
         { name: "Project Management", level: 85, description: "Applying Agile and Scrum for project delivery" },
         { name: "Problem Solving", level: 90, description: "Tackling complex challenges with analytical thinking" },
-        { name: "Communication", level: 80, description: "Collaborating effectively with teams and stakeholders" },
+        { name: "Communication", level: 73, description: "Collaborating effectively with teams and stakeholders" },
         { name: "Team Leadership", level: 85, description: "Guiding teams to achieve project goals" }
+        { name: "Adaptability", level: 88, description: "Thriving in dynamic, fast-paced environments" }
       ]
     }
   ]
