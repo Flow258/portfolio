@@ -263,7 +263,7 @@ export default function SkillsSection() {
       colorScheme: "from-emerald-500 to-teal-500",
       skills: [
         { name: "Git/GitHub", level: 90, description: "Managing version control and collaborative workflows" },
-        { name: "Docker", level: 75, description: "Containerizing applications for consistent deployment" },
+        //{ name: "Docker", level: 75, description: "Containerizing applications for consistent deployment" },
         //{ name: "CI/CD", level: 78, description: "Automating testing and deployment pipelines" },
         { name: "Maven", level: 75, description: "Managing Java project builds and dependencies" },
         { name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" },
