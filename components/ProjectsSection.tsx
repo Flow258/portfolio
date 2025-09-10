@@ -703,7 +703,7 @@ export default function ProjectsSection() {
             </div>
             <div className="space-y-2">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">3+</div>
-              <p className="text-sm sm:text-base text-muted-foreground">Learning Coding</p>
+              <p className="text-sm sm:text-base text-muted-foreground">Years of Learning Coding</p>
             </div>
           </div>
         </div>
