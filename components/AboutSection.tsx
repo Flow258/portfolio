@@ -184,7 +184,7 @@ export default function AboutSection() {
                   <div className="aspect-square bg-gradient-brand flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-700">
                     {/* Replace this with your actual image */}
                     <img 
-                      src="/images/aboutme.jpg"
+                      src="/images/about_me.jpg"
                       alt="Ashley Dave N. Aqluzalas"
                       className="w-full h-full object-cover"
                       onError={(e) => {
