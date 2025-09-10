@@ -51,7 +51,7 @@ export default function ProjectsSection() {
       gradient: "from-orange-400 to-red-500",
       imageUrl: "/project_image/meals_on_wheels.png",
       category: "fullstack" as const,
-      status: "completed" as const
+      status: "archived" as const
     },
     {
       title: "Enomy Finances",
