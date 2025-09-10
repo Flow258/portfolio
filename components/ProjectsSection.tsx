@@ -49,7 +49,7 @@ export default function ProjectsSection() {
       ],
       githubUrl: "https://github.com/Flow258/meals-on-wheels",
       gradient: "from-orange-400 to-red-500",
-      imageUrl: "/project_image/meals-on-wheels.jpg",
+      imageUrl: "/project_image/meal_on_wheel.png",
       category: "fullstack" as const,
       status: "completed" as const
     },
