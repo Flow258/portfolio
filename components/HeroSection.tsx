@@ -134,7 +134,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
 
   // Handle resume opening in new tab
   const handleResumeView = () => {
-    window.open('/files/FINAL_DRAFT.pdf', '_blank')
+    window.open('/files/Resume_Ashley-Dave-N-Alquizalas.pdf', '_blank')
   }
 
   return (
