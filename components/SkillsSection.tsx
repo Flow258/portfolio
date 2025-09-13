@@ -204,7 +204,7 @@ export default function SkillsSection() {
       colorScheme: "from-cyan-500 to-blue-500",
       skills: [
         { name: "Python", level: 76, description: "Building robust backend systems with Python" },
-        { name: "FastAPI", level: 73, description: "Creating high-performance APIs with Python's FastAPI" },
+        { name: "FastAPI", level: 63, description: "Creating high-performance APIs with Python's FastAPI" },
         { name: "Java", level: 68, description: "Developing enterprise-grade applications with Spring ecosystem" },
         { name: "Spring MVC", level: 80, description: "Building scalable web applications with Spring MVC" },
         { name: "Spring Security", level: 75, description: "Implementing authentication and authorization" },
