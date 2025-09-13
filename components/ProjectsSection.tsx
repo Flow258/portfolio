@@ -687,20 +687,24 @@ export default function ProjectsSection() {
         {/* Stats Section */}
         <div className="mt-16 sm:mt-20 pt-8 sm:pt-12 border-t px-4 sm:px-0">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
+            {/*
             <div className="space-y-2">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">{projects.length}+</div>
               <p className="text-sm sm:text-base text-muted-foreground">Projects Completed</p>
             </div>
+            Stats Section */}
             <div className="space-y-2">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">{certificates.length}</div>
               <p className="text-sm sm:text-base text-muted-foreground">Certifications</p>
             </div>
+            {/* 
             <div className="space-y-2">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
                 {Array.from(new Set(projects.flatMap(p => p.technologies))).length}+
               </div>
               <p className="text-sm sm:text-base text-muted-foreground">Technologies</p>
             </div>
+            */}
             <div className="space-y-2">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">3+</div>
               <p className="text-sm sm:text-base text-muted-foreground">Years of Learning Coding</p>
