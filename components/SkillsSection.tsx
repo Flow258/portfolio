@@ -296,7 +296,7 @@ export default function SkillsSection() {
         { name: "Adaptability", level: 88, description: "Thriving in dynamic, fast-paced environments" },
         { name: "Communication", level: 68, description: "Collaborating effectively with teams and stakeholders" },
         //{ name: "Analytical Thinking", level: 88, description: "Breaking down complex problems systematically" },
-        { name: "Cross-functional Collaboration", level: 82, description: "Working effectively across different teams and disciplines" }
+        { name: "Cross-functional Collaboration", level: 82, description: "Driving alignment and synergy across diverse teams, fostering effective communication and coordination in Agile/Scrum environments" }
       ]
     }
   ];
