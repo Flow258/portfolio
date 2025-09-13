@@ -109,7 +109,7 @@ export default function ProjectsSection() {
       title: "infinite-storage-chests",
       description: "A Minecraft plugin that introduces special chests with virtually unlimited storage capacity. Features include a custom crafting recipe, intuitive chest UI with search and sorting, and configurable options for stack limits, infinite stacking, and crafting requirements. Designed to eliminate storage constraints while maintaining balance and ease of use.",
       technologies: ["Java", "Spigot API", "Maven"],
-      liveURL : "https://www.curseforge.com/minecraft/bukkit-plugins/infinite-storage-chests",
+      liveUrl : "https://www.curseforge.com/minecraft/bukkit-plugins/infinite-storage-chests",
       githubUrl: "https://github.com/Flow258/infinitestoragechests",
       imageUrl: "/project_image/infinite_storage_chests.png",
       gradient: "from-green-400 to-emerald-500",
