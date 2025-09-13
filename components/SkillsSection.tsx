@@ -188,8 +188,8 @@ export default function SkillsSection() {
       colorScheme: "from-purple-500 to-blue-500",
       skills: [
         { name: "HTML5 & CSS3", level: 95, description: "Crafting semantic, responsive web layouts with modern standards" },
-        { name: "JavaScript ES6+", level: 95, description: "Building dynamic, interactive UIs with modern JavaScript" },
-        { name: "React.js/Next.js", level: 92, description: "Developing modern web apps with React and Next.js ecosystems" },
+        { name: "JavaScript", level: 95, description: "Building dynamic, interactive UIs with modern JavaScript" },
+        { name: "React", level: 92, description: "Developing modern web apps with React and Next.js ecosystems" },
         { name: "TypeScript", level: 90, description: "Enhancing JavaScript with type safety for scalable applications" },
         { name: "Tailwind CSS", level: 90, description: "Designing with utility-first CSS for rapid, responsive UIs" },
         { name: "Bootstrap", level: 85, description: "Creating responsive designs with Bootstrap framework" },
