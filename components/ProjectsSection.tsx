@@ -103,7 +103,7 @@ export default function ProjectsSection() {
       imageUrl: "/project_image/enderchest_vault.png",
       gradient: "from-indigo-400 to-blue-500",
       category: "minecraft-plugins" as const,
-      status: "completed" as const
+      status: "archived" as const
     },
     {
       title: "infinite-storage-chests",
