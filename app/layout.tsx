@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Ashley Dave N. Alquzialas - Portfolio",
   description: "Portfolio website",
   icons: {
-    icon: "/public/favicon.ico", // ✅ Put your file in /public/favicon.ico
+    icon: "/public/favicon.ico",
   },
 };
 
