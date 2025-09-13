@@ -404,8 +404,8 @@ export default function ProjectsSection() {
   const filterCategories = [
     { id: 'all', label: 'All Projects', count: projects.length },
     { id: 'web', label: 'Web Apps', count: projects.filter(p => p.category === 'web').length },
-    { id: 'minecraft-plugins', label: 'Minecraft Plugins', count: projects.filter(p => p.category === 'minecraft-plugins').length },
-    { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.category === 'fullstack').length }
+    { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.category === 'fullstack').length },
+    { id: 'minecraft-plugins', label: 'Minecraft Plugins', count: projects.filter(p => p.category === 'minecraft-plugins').length }
   ]
 
   const filteredProjects = activeFilter === 'all' 
