@@ -96,6 +96,16 @@ export default function ProjectsSection() {
       status: "completed" as const
     },
     {
+      title: "enderchest-vault",
+      description: "Personal portfolio website showcasing projects and skills. Built with modern web technologies and optimized for performance and SEO.",
+      technologies: ["Javen", "Spigot API", "Maven"],
+      githubUrl: "https://github.com/Flow258/enderchest-vault",
+      imageUrl: "/project_image/enderchest_vault.png",
+      gradient: "from-indigo-400 to-blue-500",
+      category: "minecraft-plugins" as const,
+      status: "completed" as const
+    },
+    {
       title: "Jumpstart Voice-to-Text Assistant",
       description: "An AI-powered voice-to-text assistant designed for a customer support environment that transcribes speech and provides real-time NLP analysis.",
       technologies: ["Python", "FastAPI", "WebSocket", "Whisper (OpenAI)", "Hugging Face Transformers", "PyAudio", "SpeechRecognition"],
@@ -394,6 +404,7 @@ export default function ProjectsSection() {
   const filterCategories = [
     { id: 'all', label: 'All Projects', count: projects.length },
     { id: 'web', label: 'Web Apps', count: projects.filter(p => p.category === 'web').length },
+    { id: 'minecraft-plugins', label: 'Minecraft Plugins', count: projects.filter(p => p.category === 'minecraft-plugins').length },
     { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.category === 'fullstack').length }
   ]
 
