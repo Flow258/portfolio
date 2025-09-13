@@ -286,10 +286,6 @@ export default function AboutSection() {
                       <div className="text-sm text-brand-medium">Began learning Python & web development</div>
                     </div>
                   </div>
-                  
-
-                  
-
                 </div>
               </CardContent>
             </Card>
