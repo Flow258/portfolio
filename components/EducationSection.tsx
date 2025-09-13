@@ -218,6 +218,20 @@ export default function EducationSection() {
 
   const educationData = [
     {
+      degree: "Applied Degree in Software Engineering (BDSE)",
+      institution: "Lithan Academy Singapore",
+      description: "Comprehensive study of server-side development, database design, and API architecture. Focused on building scalable, secure backend systems and understanding full-stack application architecture.",
+      yearRange: "2024-Present",
+      type: 'bootcamp' as const,
+      skills: ["Node.js", "Express", "MySQL", "API Design", "Authentication", "Deployment", "Java", "Python", "ML"],
+      achievements: [
+        "Built and deployed multiple full-stack applications",
+        "Mastered database design and optimization",
+        "Implemented secure authentication systems"
+      ]
+    },
+
+    {
       degree: "Bachelor of Science in Information Technology (BSIT) with a specialization in Software Engineering",
       institution: "University of the Cebu - Banilad",
       description: "Comprehensive program covering software development, systems analysis, and project management. Gained hands-on experience through internships and collaborative projects, focusing on real-world applications and industry best practices.",
@@ -257,20 +271,8 @@ export default function EducationSection() {
         "Learned to balance aesthetics with functionality",
         "Built strong foundation in visual communication"
       ]
-    },
-    {
-      degree: "Applied Degree in Software Engineering (BDSE)",
-      institution: "Lithan Academy Singapore",
-      description: "Comprehensive study of server-side development, database design, and API architecture. Focused on building scalable, secure backend systems and understanding full-stack application architecture.",
-      yearRange: "2024-Present",
-      type: 'bootcamp' as const,
-      skills: ["Node.js", "Express", "MySQL", "API Design", "Authentication", "Deployment", "Java", "Python", "ML"],
-      achievements: [
-        "Built and deployed multiple full-stack applications",
-        "Mastered database design and optimization",
-        "Implemented secure authentication systems"
-      ]
     }
+
   ]
 
   return (
