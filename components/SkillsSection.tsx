@@ -187,13 +187,13 @@ export default function SkillsSection() {
       icon: Code,
       colorScheme: "from-purple-500 to-blue-500",
       skills: [
-        { name: "HTML5 & CSS3", level: 95, description: "Crafting semantic, responsive web layouts with modern standards" },
-        { name: "JavaScript", level: 95, description: "Building dynamic, interactive UIs with modern JavaScript" },
-        { name: "React", level: 92, description: "Developing modern web apps with React and Next.js ecosystems" },
-        { name: "TypeScript", level: 90, description: "Enhancing JavaScript with type safety for scalable applications" },
-        { name: "Tailwind CSS", level: 90, description: "Designing with utility-first CSS for rapid, responsive UIs" },
+        { name: "HTML5 & CSS3", level: 80, description: "Crafting semantic, responsive web layouts with modern standards" },
+        { name: "JavaScript", level: 60, description: "Building dynamic, interactive UIs with modern JavaScript" },
+        { name: "React", level: 78, description: "Developing modern web apps with React and Next.js ecosystems" },
+        { name: "TypeScript", level: 74, description: "Enhancing JavaScript with type safety for scalable applications" },
+        { name: "Tailwind CSS", level: 75, description: "Designing with utility-first CSS for rapid, responsive UIs" },
         { name: "Bootstrap", level: 85, description: "Creating responsive designs with Bootstrap framework" },
-        { name: "Framer Motion", level: 80, description: "Adding smooth animations to enhance user experience" },
+        { name: "Framer Motion", level: 85, description: "Adding smooth animations to enhance user experience" },
         { name: "JSP", level: 75, description: "Building dynamic web pages with JavaServer Pages" },
         { name: "JSTL", level: 70, description: "Using JSP Standard Tag Library for web development" }
       ]
@@ -203,16 +203,16 @@ export default function SkillsSection() {
       icon: Database,
       colorScheme: "from-cyan-500 to-blue-500",
       skills: [
-        { name: "Python", level: 86, description: "Building robust backend systems with Python" },
-        { name: "FastAPI", level: 85, description: "Creating high-performance APIs with Python's FastAPI" },
-        { name: "Java", level: 80, description: "Developing enterprise-grade applications with Spring ecosystem" },
+        { name: "Python", level: 76, description: "Building robust backend systems with Python" },
+        { name: "FastAPI", level: 73, description: "Creating high-performance APIs with Python's FastAPI" },
+        { name: "Java", level: 74, description: "Developing enterprise-grade applications with Spring ecosystem" },
         { name: "Spring MVC", level: 80, description: "Building scalable web applications with Spring MVC" },
         { name: "Spring Security", level: 75, description: "Implementing authentication and authorization" },
         { name: "Spring Data JPA", level: 75, description: "Simplifying data access with Spring Data JPA" },
         //{ name: "Hibernate", level: 78, description: "Managing database interactions with ORM" },
         { name: "PHP", level: 76, description: "Server-side scripting for web applications" },
-        { name: "Laravel", level: 82, description: "Building elegant web applications with Laravel framework" },
-        { name: "MySQL", level: 85, description: "Designing and querying relational databases" },
+        { name: "Laravel", level: 76, description: "Building elegant web applications with Laravel framework" },
+        { name: "MySQL", level: 83, description: "Designing and querying relational databases" },
         //{ name: "WebSocket", level: 75, description: "Implementing real-time communication for applications" },
         { name: "Maven", level: 75, description: "Managing Java project builds and dependencies" },
         { name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" }
@@ -223,10 +223,10 @@ export default function SkillsSection() {
       icon: BrainCircuit,
       colorScheme: "from-violet-500 to-purple-500",
       skills: [
-        { name: "Generative AI", level: 80, description: "Leveraging AI for business and recruiting solutions" },
-        { name: "Hugging Face Transformers", level: 75, description: "Implementing NLP models for text analysis" },
-        { name: "Whisper (OpenAI)", level: 75, description: "Using OpenAI's Whisper for speech-to-text transcription" },
-        { name: "SpeechRecognition", level: 70, description: "Integrating speech recognition in applications" },
+        { name: "Generative AI", level: 60, description: "Leveraging AI for business and recruiting solutions" },
+        { name: "Hugging Face Transformers", level: 65, description: "Implementing NLP models for text analysis" },
+        { name: "Whisper (OpenAI)", level: 70, description: "Using OpenAI's Whisper for speech-to-text transcription" },
+        { name: "SpeechRecognition", level: 65, description: "Integrating speech recognition in applications" },
         { name: "PyAudio", level: 68, description: "Audio processing and recording with Python" },
         { name: "Ollama", level: 70, description: "Utilizing Ollama for local LLM deployments" }
       ]
