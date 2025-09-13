@@ -5,7 +5,7 @@ import ProjectCard from '@/components/ProjectCard'
 import { Button } from '@/components/ui/button'
 import { image } from 'framer-motion/client'
 
-type ProjectFilter = 'all' | 'web' | 'mobile' | 'fullstack'
+type ProjectFilter = 'all' | 'web' | 'minecraft-plugins' | 'fullstack'
 
 interface Certificate {
   name: string
