@@ -1,12 +1,13 @@
 // components/ContactForm.tsx
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import emailjs from '@emailjs/browser'
 
 interface FormData {
   name: string
@@ -25,6 +26,7 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const formRef = useRef<HTMLFormElement>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,21 +34,17 @@ export default function ContactForm() {
     setError(null)
     
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      if (!formRef.current) return
 
-      const result = await response.json()
+      // Send email using EmailJS
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Your EmailJS service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Your EmailJS template ID
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // Your EmailJS public key
+      )
 
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to send message')
-      }
-
-      console.log('Email sent successfully:', result)
+      console.log('Email sent successfully via EmailJS')
       setIsSubmitted(true)
       
       // Reset form after success
@@ -56,8 +54,8 @@ export default function ContactForm() {
       }, 5000)
 
     } catch (error) {
-      console.error('Form submission error:', error)
-      setError(error instanceof Error ? error.message : 'Failed to send message')
+      console.error('EmailJS error:', error)
+      setError('Failed to send message. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -110,7 +108,7 @@ export default function ContactForm() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
           {/* Name & Email Row */}
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -119,11 +117,14 @@ export default function ContactForm() {
               </Label>
               <Input
                 id="name"
-                name="name"
+                name="from_name"
                 type="text"
                 placeholder="John Doe"
                 value={formData.name}
-                onChange={handleChange}
+                onChange={(e) => {
+                  handleChange(e)
+                  setFormData(prev => ({ ...prev, name: e.target.value }))
+                }}
                 required
                 className="focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
               />
@@ -134,11 +135,14 @@ export default function ContactForm() {
               </Label>
               <Input
                 id="email"
-                name="email"
+                name="from_email"
                 type="email"
                 placeholder="john@example.com"
                 value={formData.email}
-                onChange={handleChange}
+                onChange={(e) => {
+                  handleChange(e)
+                  setFormData(prev => ({ ...prev, email: e.target.value }))
+                }}
                 required
                 className="focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
               />
