@@ -265,9 +265,12 @@ export default function SkillsSection() {
         { name: "Git/GitHub", level: 90, description: "Managing version control and collaborative workflows" },
         //{ name: "Docker", level: 75, description: "Containerizing applications for consistent deployment" },
         //{ name: "CI/CD", level: 78, description: "Automating testing and deployment pipelines" },
-        { name: "Maven", level: 75, description: "Managing Java project builds and dependencies" },
-        { name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" },
-        { name: "Vercel", level: 75, description: "Deploying and hosting modern web applications" }
+        { name: "Stripe API", level: 69, description: "Integrating secure payment processing with Stripe" },
+        { name: "REST API Development", level: 64, description: "Building and consuming RESTful web services" },
+        { name: "API Integration", level: 67, description: "Connecting applications with third-party services" },
+        { name: "Maven", level: 63, description: "Managing Java project builds and dependencies" },
+        { name: "Tomcat", level: 67, description: "Deploying Java applications on Tomcat server" },
+        { name: "Vercel", level: 80, description: "Deploying and hosting modern web applications" }
       ]
     },
     /*
