@@ -371,7 +371,7 @@ export default function EducationSection() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
                   {[
                     //{ label: 'Hours Coding', value: '1000+' },
-                    { label: 'Projects Built', value: '9+' },
+                    { label: 'Projects Built', value: '10+' },
                     { label: 'Technologies', value: '33+' },
                     { label: 'Still Learning', value: '∞' }
                   ].map((stat, index) => (
