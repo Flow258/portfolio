@@ -291,7 +291,7 @@ export default function SkillsSection() {
         { name: "Problem Solving", level: 81, description: "Tackling complex challenges with analytical thinking" },
         //{ name: "Team Leadership", level: 76, description: "Guiding teams to achieve project goals" },
         { name: "Adaptability", level: 88, description: "Thriving in dynamic, fast-paced environments" },
-        { name: "Communication", level: 73, description: "Collaborating effectively with teams and stakeholders" },
+        { name: "Communication", level: 68, description: "Collaborating effectively with teams and stakeholders" },
         //{ name: "Analytical Thinking", level: 88, description: "Breaking down complex problems systematically" },
         { name: "Cross-functional Collaboration", level: 82, description: "Working effectively across different teams and disciplines" }
       ]
