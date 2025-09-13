@@ -131,7 +131,7 @@ export default function ProjectsSection() {
       description: "A Minecraft plugin built in Java that brings a divine touch: players can receive healing blessings or status effects via the 'Healer Saint', configurable through plugin settings. Offers flexible configuration via YAML, permission-based usage, and seamless in-game integration to enhance gameplay with supportive mechanics.",
       technologies: ["Java", "Spigot API" /* or Paper API if applicable */, "YAML configuration"],
       githubUrl: "https://github.com/Flow258/HealerSaint",
-      liveURL : "https://www.curseforge.com/minecraft/bukkit-plugins/healer-saint",
+      liveUrl : "https://www.curseforge.com/minecraft/bukkit-plugins/healer-saint",
       imageUrl: "/project_image/healer_saint.png",
       gradient: "from-teal-400 to-cyan-500",
       category: "minecraft-plugins" as const,
