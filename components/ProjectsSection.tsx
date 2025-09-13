@@ -97,7 +97,7 @@ export default function ProjectsSection() {
     },
     {
       title: "enderchest-vault",
-      description: "Personal portfolio website showcasing projects and skills. Built with modern web technologies and optimized for performance and SEO.",
+      description: "A Minecraft plugin that enhances the traditional Ender Chest by providing a secure, customizable personal vault system. Supports seamless integration with PlayerVaults if available, or uses a built-in vault system with configurable sizes and titles. Designed for safety, persistence, and ease of use, ensuring players can reliably store and access items across sessions.",
       technologies: ["Javen", "Spigot API", "Maven"],
       githubUrl: "https://github.com/Flow258/enderchest-vault",
       imageUrl: "/project_image/enderchest_vault.png",
