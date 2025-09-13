@@ -20,7 +20,7 @@ export default function AboutSection() {
 
   const stats = [
     { label: 'Years Learning', value: '3+', icon: Calendar },
-    { label: 'Projects Built', value: '9', icon: Code },
+    { label: 'Projects Built', value: '10+', icon: Code },
     { label: 'Based in', value: 'Philippines', icon: MapPin }
   ]
 
@@ -264,27 +264,32 @@ export default function AboutSection() {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-brand-darkest rounded-full"></div>
+                    
+                    <div className="flex items-center space-x-4">
+                    <div className="w-3 h-3 bg-brand-medium rounded-full animate-pulse"></div>
                     <div>
-                      <div className="font-semibold text-brand-darkest">2023 - Started Coding</div>
-                      <div className="text-sm text-brand-medium">Began learning Python & web development</div>
+                      <div className="font-semibold text-brand-darkest">2025 - Growing</div>
+                      <div className="text-sm text-brand-medium">Building projects & learning daily</div>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4">
+
+                    <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-brand-dark rounded-full"></div>
                     <div>
                       <div className="font-semibold text-brand-darkest">2024 - Full Stack</div>
                       <div className="text-sm text-brand-medium">Learn Java, React, Node.js & databases</div>
                     </div>
                   </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="w-3 h-3 bg-brand-medium rounded-full animate-pulse"></div>
+
+                  </div>
                     <div>
-                      <div className="font-semibold text-brand-darkest">2025 - Growing</div>
-                      <div className="text-sm text-brand-medium">Building projects & learning daily</div>
+                      <div className="font-semibold text-brand-darkest">2023 - Started Coding</div>
+                      <div className="text-sm text-brand-medium">Began learning Python & web development</div>
                     </div>
                   </div>
+                  
+
+                  
+
                 </div>
               </CardContent>
             </Card>
