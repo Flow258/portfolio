@@ -124,7 +124,7 @@ export default function ProjectsSection() {
       imageUrl: "/project_image/player_levels.png",
       gradient: "from-yellow-400 to-orange-500",
       category: "minecraft-plugins" as const,
-      status: "completed" as const
+      status: "archived" as const
     },
     {
       title: "healer-saint",
