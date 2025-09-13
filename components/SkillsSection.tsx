@@ -189,7 +189,7 @@ export default function SkillsSection() {
       skills: [
         { name: "HTML5 & CSS3", level: 80, description: "Crafting semantic, responsive web layouts with modern standards" },
         { name: "JavaScript", level: 60, description: "Building dynamic, interactive UIs with modern JavaScript" },
-        { name: "React", level: 78, description: "Developing modern web apps with React and Next.js ecosystems" },
+        { name: "ReactJS", level: 78, description: "Developing modern web apps with React and Next.js ecosystems" },
         { name: "TypeScript", level: 74, description: "Enhancing JavaScript with type safety for scalable applications" },
         { name: "Tailwind CSS", level: 75, description: "Designing with utility-first CSS for rapid, responsive UIs" },
         { name: "Bootstrap", level: 85, description: "Creating responsive designs with Bootstrap framework" },
