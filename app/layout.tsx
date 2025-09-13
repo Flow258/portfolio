@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Ashley Dave N. Alquzialas - Portfolio",
   description: "Portfolio website",
   icons: {
     icon: "/public/favicon.ico", // ✅ Put your file in /public/favicon.ico
