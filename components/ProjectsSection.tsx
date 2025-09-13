@@ -3,7 +3,7 @@ import { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
 //import CertificateCard from '@/components/CertificateCard'
 import { Button } from '@/components/ui/button'
-import { image } from 'framer-motion/client'
+import { image, li } from 'framer-motion/client'
 
 type ProjectFilter = 'all' | 'web' | 'minecraft-plugins' | 'fullstack'
 
@@ -102,6 +102,38 @@ export default function ProjectsSection() {
       githubUrl: "https://github.com/Flow258/enderchest-vault",
       imageUrl: "/project_image/enderchest_vault.png",
       gradient: "from-indigo-400 to-blue-500",
+      category: "minecraft-plugins" as const,
+      status: "completed" as const
+    },
+    {
+      title: "infinite-storage-chests",
+      description: "A Minecraft plugin that introduces special chests with virtually unlimited storage capacity. Features include a custom crafting recipe, intuitive chest UI with search and sorting, and configurable options for stack limits, infinite stacking, and crafting requirements. Designed to eliminate storage constraints while maintaining balance and ease of use.",
+      technologies: ["Java", "Spigot API", "Maven"],
+      liveURL : "https://www.curseforge.com/minecraft/bukkit-plugins/infinite-storage-chests",
+      githubUrl: "https://github.com/Flow258/infinitestoragechests",
+      imageUrl: "/project_image/infinite_storage_chests.png",
+      gradient: "from-green-400 to-emerald-500",
+      category: "minecraft-plugins" as const,
+      status: "completed" as const
+    },
+    {
+      title: "player-levels",
+      description: "A Minecraft plugin that tracks in-game statistics to dynamically assign player levels with exponential XP scaling. Server admins can configure which stats contribute, set rewards for reaching levels, and integrate with PlaceholderAPI. Includes leaderboards, customizable storage (SQLite or MySQL), and full config flexibility for balancing and progression.",
+      technologies: ["Java", "Paper API", "PlaceholderAPI", "MySQL", "SQLite"],
+      githubUrl: "https://github.com/Flow258/PlayerLevels",
+      imageUrl: "/project_image/player_levels.png",
+      gradient: "from-yellow-400 to-orange-500",
+      category: "minecraft-plugins" as const,
+      status: "completed" as const
+    },
+    {
+      title: "healer-saint",
+      description: "A Minecraft plugin built in Java that brings a divine touch: players can receive healing blessings or status effects via the 'Healer Saint', configurable through plugin settings. Offers flexible configuration via YAML, permission-based usage, and seamless in-game integration to enhance gameplay with supportive mechanics.",
+      technologies: ["Java", "Spigot API" /* or Paper API if applicable */, "YAML configuration"],
+      githubUrl: "https://github.com/Flow258/HealerSaint",
+      liveURL : "https://www.curseforge.com/minecraft/bukkit-plugins/healer-saint",
+      imageUrl: "/project_image/healer_saint.png",
+      gradient: "from-teal-400 to-cyan-500",
       category: "minecraft-plugins" as const,
       status: "completed" as const
     },
