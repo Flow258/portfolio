@@ -24,24 +24,40 @@ export default function ContactForm() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      console.log('Form submitted:', formData)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message')
+      }
+
+      console.log('Email sent successfully:', result)
       setIsSubmitted(true)
       
       // Reset form after success
       setTimeout(() => {
         setIsSubmitted(false)
         setFormData({ name: '', email: '', subject: '', message: '' })
-      }, 3000)
+      }, 5000)
+
     } catch (error) {
       console.error('Form submission error:', error)
+      setError(error instanceof Error ? error.message : 'Failed to send message')
     } finally {
       setIsSubmitting(false)
     }
@@ -83,6 +99,17 @@ export default function ContactForm() {
         </p>
       </CardHeader>
       <CardContent className="space-y-6">
+        {error && (
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p className="text-red-800 text-sm font-medium">{error}</p>
+            </div>
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name & Email Row */}
           <div className="grid sm:grid-cols-2 gap-4">
