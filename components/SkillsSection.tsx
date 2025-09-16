@@ -215,7 +215,7 @@ export default function SkillsSection() {
         { name: "MySQL", level: 83, description: "Designing and querying relational databases" },
         //{ name: "WebSocket", level: 75, description: "Implementing real-time communication for applications" },
         //{ name: "Maven", level: 75, description: "Managing Java project builds and dependencies" },
-        { name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" }
+        //{ name: "Tomcat", level: 70, description: "Deploying Java applications on Tomcat server" }
       ]
     },
     {
