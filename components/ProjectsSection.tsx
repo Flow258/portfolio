@@ -137,6 +137,16 @@ export default function ProjectsSection() {
       status: "completed" as const
     },
     {
+      title: "simplebank",
+      description: "A Minecraft banking plugin for 1.21.5 that integrates with Vault-based economy plugins like EssentialsX and CMI. Players can securely deposit, withdraw, and check balances with optional daily interest, configurable limits, login notifications, and admin controls. Includes a developer API and YAML-based storage with planned database support.",
+      technologies: ["Java", "Paper API", "Vault", "EssentialsX", "CMI"],
+      githubUrl: "https://github.com/Flow258/SimpleBank",
+      imageUrl: "/project_image/simplebank.png",
+      gradient: "from-green-400 to-emerald-600",
+      category: "minecraft-plugins" as const,
+      status: "active" as const
+    },
+    {
       title: "Jumpstart Voice-to-Text Assistant",
       description: "An AI-powered voice-to-text assistant designed for a customer support environment that transcribes speech and provides real-time NLP analysis.",
       technologies: ["Python", "FastAPI", "WebSocket", "Whisper (OpenAI)", "Hugging Face Transformers", "PyAudio", "SpeechRecognition"],
