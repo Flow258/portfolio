@@ -260,27 +260,29 @@ export default function AboutSection() {
             <Card className="bg-brand-light/20 border border-brand-light shadow-lg">
               <CardContent className="p-8">
                 <h4 className="text-xl font-bold text-brand-darkest mb-6">Quick Timeline</h4>
-                
+
                 <div className="space-y-4">
+                  {/* 2025 */}
                   <div className="flex items-center space-x-4">
-                    <div className="w-3 h-3 bg-brand-darkest rounded-full"></div>
-                    
-                    <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-brand-medium rounded-full animate-pulse"></div>
                     <div>
                       <div className="font-semibold text-brand-darkest">2025 - Growing</div>
                       <div className="text-sm text-brand-medium">Building projects & learning daily</div>
                     </div>
+                  </div>
 
-                    <div className="flex items-center space-x-4">
+                  {/* 2024 */}
+                  <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-brand-dark rounded-full"></div>
                     <div>
                       <div className="font-semibold text-brand-darkest">2024 - Full Stack</div>
-                      <div className="text-sm text-brand-medium">Learn Java, React, Node.js & databases</div>
+                      <div className="text-sm text-brand-medium">Learned Java, React, Node.js & databases</div>
                     </div>
                   </div>
 
-                  </div>
+                  {/* 2023 */}
+                  <div className="flex items-center space-x-4">
+                    <div className="w-3 h-3 bg-brand-darkest rounded-full"></div>
                     <div>
                       <div className="font-semibold text-brand-darkest">2023 - Started Coding</div>
                       <div className="text-sm text-brand-medium">Began learning Python & web development</div>
