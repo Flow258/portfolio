@@ -41,7 +41,6 @@ export default function ProjectsSection() {
       title: "Meals on Wheels Laravel Application",
       description: "Built a charity meal delivery system with a 5-member team, featuring a CRUD dashboard, secure donations, meal planning, and location-based hot/cold meal delivery. Developed the donations dashboard system, designed and implemented the supporting database schema, and integrated Stripe as the secure payment gateway for seamless donation processing.",
       technologies: [
-        "PHP",
         "Laravel",
         "React.js",
         "Stripe API",
