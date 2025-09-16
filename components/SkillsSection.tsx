@@ -210,7 +210,7 @@ export default function SkillsSection() {
         //{ name: "Spring Security", level: 53, description: "Implementing authentication and authorization" },
         //{ name: "Spring Data JPA", level: 53, description: "Simplifying data access with Spring Data JPA" },
         //{ name: "Hibernate", level: 78, description: "Managing database interactions with ORM" },
-        { name: "PHP", level: 68, description: "Server-side scripting for web applications" },
+        //{ name: "PHP", level: 68, description: "Server-side scripting for web applications" },
         { name: "Laravel", level: 68, description: "Building elegant web applications with Laravel framework" },
         { name: "MySQL", level: 83, description: "Designing and querying relational databases" },
         //{ name: "WebSocket", level: 75, description: "Implementing real-time communication for applications" },
