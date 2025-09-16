@@ -97,7 +97,7 @@ export default function ProjectsSection() {
     {
       title: "enderchest-vault",
       description: "A Minecraft plugin that enhances the traditional Ender Chest by providing a secure, customizable personal vault system. Supports seamless integration with PlayerVaults if available, or uses a built-in vault system with configurable sizes and titles. Designed for safety, persistence, and ease of use, ensuring players can reliably store and access items across sessions.",
-      technologies: ["Javen", "Spigot API", "Maven"],
+      technologies: ["Java", "Spigot API", "Maven"],
       githubUrl: "https://github.com/Flow258/enderchest-vault",
       imageUrl: "/project_image/enderchest_vault.png",
       gradient: "from-indigo-400 to-blue-500",
@@ -128,23 +128,13 @@ export default function ProjectsSection() {
     {
       title: "healer-saint",
       description: "A Minecraft plugin built in Java that brings a divine touch: players can receive healing blessings or status effects via the 'Healer Saint', configurable through plugin settings. Offers flexible configuration via YAML, permission-based usage, and seamless in-game integration to enhance gameplay with supportive mechanics.",
-      technologies: ["Java", "Spigot API" /* or Paper API if applicable */, "YAML configuration"],
+      technologies: ["Java", "Spigot API", "YAML configuration"],
       githubUrl: "https://github.com/Flow258/HealerSaint",
       liveUrl : "https://www.curseforge.com/minecraft/bukkit-plugins/healer-saint",
       imageUrl: "/project_image/healer_saint.png",
       gradient: "from-teal-400 to-cyan-500",
       category: "minecraft-plugins" as const,
       status: "completed" as const
-    },
-    {
-      title: "simplebank",
-      description: "A Minecraft banking plugin for 1.21.5 that integrates with Vault-based economy plugins like EssentialsX and CMI. Players can securely deposit, withdraw, and check balances with optional daily interest, configurable limits, login notifications, and admin controls. Includes a developer API and YAML-based storage with planned database support.",
-      technologies: ["Java", "Paper API", "Vault", "EssentialsX", "CMI"],
-      githubUrl: "https://github.com/Flow258/SimpleBank",
-      imageUrl: "/project_image/simplebank.png",
-      gradient: "from-green-400 to-emerald-600",
-      category: "minecraft-plugins" as const,
-      status: "active" as const
     },
     {
       title: "Jumpstart Voice-to-Text Assistant",
@@ -155,8 +145,19 @@ export default function ProjectsSection() {
       gradient: "from-violet-400 to-purple-500",
       category: "fullstack" as const,
       status: "archived" as const
+    },
+    {
+      title: "simplebank",
+      description: "A Minecraft plugin that provides players with a simple, secure in-game banking system. Features include deposits, withdrawals, account balances, and Vault economy integration. Configurable messages and permissions make it easy for server admins to customize player banking experiences.",
+      technologies: ["Java", "Spigot API", "Vault API", "Maven"],
+      githubUrl: "https://github.com/Flow258/SimpleBank",
+      imageUrl: "/project_image/simplebank.png",
+      gradient: "from-pink-400 to-rose-500",
+      category: "minecraft-plugins" as const,
+      status: "in-progress" as const
     }
   ]
+
 
   const certificates: Certificate[] = [
     {
