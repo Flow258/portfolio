@@ -276,7 +276,7 @@ export default function AboutSection() {
                     <div className="w-3 h-3 bg-brand-dark rounded-full"></div>
                     <div>
                       <div className="font-semibold text-brand-darkest">2024 - Full Stack</div>
-                      <div className="text-sm text-brand-medium">Learned Java, React, Node.js & databases</div>
+                      <div className="text-sm text-brand-medium">Learned Java, React, & databases</div>
                     </div>
                   </div>
 
