@@ -223,12 +223,12 @@ export default function SkillsSection() {
       icon: BrainCircuit,
       colorScheme: "from-violet-500 to-purple-500",
       skills: [
-        { name: "Generative AI", level: 60, description: "Leveraging AI for business and recruiting solutions" },
-        { name: "Hugging Face Transformers", level: 65, description: "Implementing NLP models for text analysis" },
-        { name: "Whisper (OpenAI)", level: 70, description: "Using OpenAI's Whisper for speech-to-text transcription" },
+        //{ name: "Generative AI", level: 60, description: "Leveraging AI for business and recruiting solutions" },
+        { name: "Hugging Face Transformers", level: 55, description: "Implementing NLP models for text analysis" },
+        { name: "Whisper (OpenAI)", level: 50, description: "Using OpenAI's Whisper for speech-to-text transcription" },
         { name: "SpeechRecognition", level: 65, description: "Integrating speech recognition in applications" },
-        { name: "PyAudio", level: 68, description: "Audio processing and recording with Python" },
-        { name: "Ollama", level: 70, description: "Utilizing Ollama for local LLM deployments" }
+        { name: "PyAudio", level: 58, description: "Audio processing and recording with Python" },
+        { name: "Ollama", level: 50, description: "Utilizing Ollama for local LLM deployments" }
       ]
     },
     /*
