@@ -187,15 +187,15 @@ export default function SkillsSection() {
       icon: Code,
       colorScheme: "from-purple-500 to-blue-500",
       skills: [
-        { name: "HTML5 & CSS3", level: 80, description: "Crafting semantic, responsive web layouts with modern standards" },
-        { name: "JavaScript", level: 60, description: "Building dynamic, interactive UIs with modern JavaScript" },
-        { name: "ReactJS", level: 78, description: "Developing modern web apps with React and Next.js ecosystems" },
+        { name: "HTML5 & CSS3", level: 60, description: "Crafting semantic, responsive web layouts with modern standards" },
+        { name: "JavaScript", level: 50, description: "Building dynamic, interactive UIs with modern JavaScript" },
+        { name: "ReactJS", level: 68, description: "Developing modern web apps with React and Next.js ecosystems" },
         { name: "TypeScript", level: 74, description: "Enhancing JavaScript with type safety for scalable applications" },
         { name: "Tailwind CSS", level: 75, description: "Designing with utility-first CSS for rapid, responsive UIs" },
         { name: "Bootstrap", level: 85, description: "Creating responsive designs with Bootstrap framework" },
-        { name: "Framer Motion", level: 85, description: "Adding smooth animations to enhance user experience" },
-        { name: "JSP", level: 75, description: "Building dynamic web pages with JavaServer Pages" },
-        { name: "JSTL", level: 70, description: "Using JSP Standard Tag Library for web development" }
+        { name: "Framer Motion", level: 65, description: "Adding smooth animations to enhance user experience" },
+        { name: "JSP", level: 55, description: "Building dynamic web pages with JavaServer Pages" },
+        { name: "JSTL", level: 50, description: "Using JSP Standard Tag Library for web development" }
       ]
     },
     {
@@ -203,7 +203,7 @@ export default function SkillsSection() {
       icon: Database,
       colorScheme: "from-cyan-500 to-blue-500",
       skills: [
-        { name: "Python", level: 70, description: "Building robust backend systems with Python" },
+        { name: "Python", level: 60, description: "Building robust backend systems with Python" },
         { name: "FastAPI", level: 63, description: "Creating high-performance APIs with Python's FastAPI" },
         { name: "Java", level: 68, description: "Developing enterprise-grade applications with Spring ecosystem" },
         { name: "Spring MVC", level: 55, description: "Building scalable web applications with Spring MVC" },
